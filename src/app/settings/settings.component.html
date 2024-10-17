@@ -1,0 +1,19 @@
+<ActionBar title="Settings"></ActionBar>
+<ScrollView>
+  <StackLayout class="settings-container">
+    <GridLayout columns="*, auto" class="setting-item">
+      <Label text="Notifications" col="0"></Label>
+      <Switch [(ngModel)]="settings.notifications" (checkedChange)="onNotificationChange($event)" col="1"></Switch>
+    </GridLayout>
+    
+    <GridLayout columns="*, auto" class="setting-item">
+      <Label text="Dark Mode" col="0"></Label>
+      <Switch [(ngModel)]="settings.darkMode" (checkedChange)="onDarkModeChange($event)" col="1"></Switch>
+    </GridLayout>
+    
+    <StackLayout class="setting-item">
+      <Label text="Language"></Label>
+      <ListPicker [items]="['English', 'Spanish', 'French']" [(ngModel)]="settings.language" (selectedIndexChange)="onLanguageChange($event)"></ListPicker>
+    </StackLayout>
+  </StackLayout>
+</ScrollView>

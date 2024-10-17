@@ -1,0 +1,14 @@
+<ActionBar title="ConnectIN Feed"></ActionBar>
+<GridLayout>
+  <ListView [items]="feedItems" class="list-group" *ngIf="!isLoading">
+    <ng-template let-item="item">
+      <StackLayout class="list-group-item">
+        <Label [text]="item.type" class="list-group-item-heading"></Label>
+        <Label [text]="item.content || item.name" class="list-group-item-text"></Label>
+        <Label *ngIf="item.price" [text]="'Price: ' + item.price" class="list-group-item-text"></Label>
+        <Label *ngIf="item.date" [text]="'Date: ' + item.date" class="list-group-item-text"></Label>
+      </StackLayout>
+    </ng-template>
+  </ListView>
+  <ActivityIndicator [busy]="isLoading" [visibility]="isLoading ? 'visible' : 'collapse'" horizontalAlignment="center" verticalAlignment="center"></ActivityIndicator>
+</GridLayout>

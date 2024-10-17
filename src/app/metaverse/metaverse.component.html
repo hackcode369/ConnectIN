@@ -1,0 +1,11 @@
+<ActionBar title="Metaverse Creator"></ActionBar>
+<GridLayout rows="*, auto">
+  <ContentView row="0">
+    <!-- TODO: Add AR view component here -->
+    <Label text="AR View Placeholder" class="ar-placeholder"></Label>
+  </ContentView>
+  <StackLayout row="1" orientation="horizontal" class="metaverse-controls">
+    <Button text="Add Object" (tap)="onAddObject()" class="btn btn-primary"></Button>
+    <Button text="Save Space" (tap)="onSaveSpace()" class="btn btn-primary"></Button>
+  </StackLayout>
+</GridLayout>

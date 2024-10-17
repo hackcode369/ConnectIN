@@ -1,0 +1,47 @@
+<GridLayout>
+  <page-router-outlet></page-router-outlet>
+</GridLayout>
+<BottomNavigation>
+  <TabStrip>
+    <TabStripItem class="navigation__item">
+      <Label text="Home"></Label>
+      <Image src="font://&#xf015;" class="fas t-36"></Image>
+    </TabStripItem>
+    <TabStripItem class="navigation__item">
+      <Label text="Profile"></Label>
+      <Image src="font://&#xf007;" class="fas t-36"></Image>
+    </TabStripItem>
+    <TabStripItem class="navigation__item">
+      <Label text="Create NFT"></Label>
+      <Image src="font://&#xf303;" class="fas t-36"></Image>
+    </TabStripItem>
+    <TabStripItem class="navigation__item">
+      <Label text="Metaverse"></Label>
+      <Image src="font://&#xf1b2;" class="fas t-36"></Image>
+    </TabStripItem>
+    <TabStripItem class="navigation__item">
+      <Label text="Marketplace"></Label>
+      <Image src="font://&#xf07a;" class="fas t-36"></Image>
+    </TabStripItem>
+  </TabStrip>
+
+  <TabContentItem>
+    <page-router-outlet name="homeTab"></page-router-outlet>
+  </TabContentItem>
+
+  <TabContentItem>
+    <page-router-outlet name="profileTab"></page-router-outlet>
+  </TabContentItem>
+
+  <TabContentItem>
+    <page-router-outlet name="nftCreationTab"></page-router-outlet>
+  </TabContentItem>
+
+  <TabContentItem>
+    <page-router-outlet name="metaverseTab"></page-router-outlet>
+  </TabContentItem>
+
+  <TabContentItem>
+    <page-router-outlet name="marketplaceTab"></page-router-outlet>
+  </TabContentItem>
+</BottomNavigation>

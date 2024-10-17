@@ -1,0 +1,7 @@
+<ActionBar title="Live Streaming"></ActionBar>
+<StackLayout>
+  <Label [text]="isStreaming ? 'Live' : 'Offline'" class="stream-status"></Label>
+  <Button [text]="isStreaming ? 'Stop Stream' : 'Start Stream'" (tap)="toggleStream()" class="btn btn-primary"></Button>
+  <TextField [(ngModel)]="streamKey" hint="Enter stream key" class="input" [isEnabled]="!isStreaming"></TextField>
+  <Button text="Mint NFT Moment" (tap)="mintNFTMoment()" class="btn btn-secondary" [isEnabled]="isStreaming"></Button>
+</StackLayout>

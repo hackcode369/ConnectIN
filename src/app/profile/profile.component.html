@@ -1,0 +1,16 @@
+<ActionBar title="Profile"></ActionBar>
+<ScrollView>
+  <StackLayout class="profile-container">
+    <Image [src]="user.avatar" class="profile-avatar" (tap)="onAvatarTap()"></Image>
+    <Label [text]="user.name" class="profile-name"></Label>
+    <Label [text]="'Wallet Balance: ' + user.walletBalance" class="profile-balance"></Label>
+    
+    <Label text="My NFTs" class="section-title"></Label>
+    <WrapLayout>
+      <StackLayout *ngFor="let nft of user.nfts" class="nft-item">
+        <Image [src]="nft.image" class="nft-image"></Image>
+        <Label [text]="nft.name" class="nft-name"></Label>
+      </StackLayout>
+    </WrapLayout>
+  </StackLayout>
+</ScrollView>

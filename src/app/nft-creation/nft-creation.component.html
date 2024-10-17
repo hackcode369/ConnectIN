@@ -1,0 +1,21 @@
+<ActionBar title="Create NFT"></ActionBar>
+<ScrollView>
+  <StackLayout class="p-4">
+    <Button text="Select File" (tap)="onSelectFile()" class="btn btn-primary m-b-10"></Button>
+    <TextField [(ngModel)]="nftData.title" hint="NFT Title" class="input m-b-10"></TextField>
+    <TextView [(ngModel)]="nftData.description" hint="Description" class="input m-b-10"></TextView>
+    <TextField [(ngModel)]="nftData.price" hint="Price (ETH)" keyboardType="number" class="input m-b-10"></TextField>
+    <TextField [(ngModel)]="nftData.royalties" hint="Royalties (%)" keyboardType="number" class="input m-b-10"></TextField>
+    <Button text="Create NFT" (tap)="onCreateNFT()" [isEnabled]="!isCreating" class="btn btn-primary m-b-10"></Button>
+    
+    <ActivityIndicator [busy]="isCreating" [visibility]="isCreating ? 'visible' : 'collapse'"></ActivityIndicator>
+    
+    <StackLayout *ngIf="createdNFT" class="m-t-10">
+      <Label text="NFT Created Successfully!" class="h3 text-center"></Label>
+      <Image [src]="createdNFT.image" class="m-t-10" width="200" height="200"></Image>
+      <Label [text]="'Title: ' + createdNFT.title" class="m-t-10"></Label>
+      <Label [text]="'Price: ' + createdNFT.price + ' ETH'"></Label>
+      <Label [text]="'Royalties: ' + createdNFT.royalties + '%'"></Label>
+    </StackLayout>
+  </StackLayout>
+</ScrollView>

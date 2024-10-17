@@ -1,0 +1,14 @@
+<ActionBar title="NFT Marketplace"></ActionBar>
+<GridLayout>
+  <ListView [items]="nfts" class="list-group">
+    <ng-template let-nft="item">
+      <GridLayout columns="auto, *" class="list-group-item" (tap)="onNFTTap(nft)">
+        <Image [src]="nft.image" class="thumb img-circle"></Image>
+        <StackLayout col="1">
+          <Label [text]="nft.name" class="list-group-item-heading"></Label>
+          <Label [text]="'Price: ' + nft.price" class="list-group-item-text"></Label>
+        </StackLayout>
+      </GridLayout>
+    </ng-template>
+  </ListView>
+</GridLayout>
